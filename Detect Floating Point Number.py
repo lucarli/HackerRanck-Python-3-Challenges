@@ -45,11 +45,17 @@
 
 #Output True or False for each test case.
 
-for _ in range(int(input())):    
+for _ in range(int(input())): 
+    s = input()
     try:
-        float(input())
-        sucess = True
+        int(s)
+        sucess = False    
     except ValueError:
-        sucess = False
+        try:
+            float(s)
+            sucess = True
+        except ValueError:
+            sucess = False
+    
     print(sucess)
 	
